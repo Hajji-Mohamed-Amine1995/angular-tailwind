@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  overflow-x: hidden;
+}
+@media (prefers-color-scheme: dark){
+  body{
+    @apply dark:bg-gray-800 dark:text-white;
+  }
+}
+input.ng-valid{
+  @apply border-4 border-green-500;
+}
+input.ng-invalid{
+  @apply border-4 border-red-500;
+}

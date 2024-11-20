@@ -1,0 +1,20 @@
+<main class="flex flex-row flex-wrap items-center justify-center w-screen h-screen gap-2 p-2">
+  <img ngSrc="/assets/login.jpg" [width]="350" [height]="350" class="w-[clamp(300px, 40%, 450px)]" alt="" loading="lazy"/>
+  <form #ngForm="ngForm" class="p-4 border-2 opacity-70 backdrop-blur-2xl w-[clamp(300px, 40%, 450px)]" style="border-radius: 10px" (ngSubmit)="handleSubmit($event)">
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <label class="flex text-start w-100" for="email">email:</label>
+      <input (change)="setEmail($event)" type="email" id="email" name="email" required  class="p-1 text-black border-2" style="border-radius: 5px" [(ngModel)]="email"/>
+      <p class="text-light">{{email}}</p>
+    </div>
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <label class="flex text-start w-100" for="password">password:</label>
+      <input (change)="setPassword($event)" type="password" id="password" name="password" required  class="p-1 text-black border-2" style="border-radius: 5px" [(ngModel)]="password"/>
+      <p class="text-light">{{password}}</p>
+    </div>
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <button [disabled]="!ngForm.form.valid" type="submit" class="px-4 py-2 bg-blue-600 rounded w-100">
+        login
+      </button>
+    </div>
+  </form>
+</main>

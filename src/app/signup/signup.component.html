@@ -1,0 +1,30 @@
+<main class="flex flex-row flex-wrap items-center justify-center w-screen h-screen gap-2 p-2">
+  <img ngSrc="/assets/signup.jpg" class="w-[clamp(300px, 40%, 450px)]" [width]="350" [height]="350"  alt="" loading="lazy"/>
+  <form class="border-2 p-4 opacity-70 backdrop-blur-2xl w-[clamp(300px, 40%, 450px)]" style="border-radius: 10px" [formGroup]="formGroup">
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <label class="flex text-start w-100" for="firstName">firstName:</label>
+      <input type="text" id="firstName" name="firstName" required  class="p-1 border-2 text-black" style="border-radius: 5px" formControlName="firstName"/>
+        <p>{{formGroup.value.firstName}}</p>
+    </div>
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <label class="flex text-start w-100" for="lastName">last name:</label>
+      <input type="text" id="lastName" name="lastName" required  class="p-1 border-2 text-black" style="border-radius: 5px" formControlName="lastName"/>
+      <p>{{formGroup.value.lastName}}</p>
+    </div>
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <label class="flex text-start w-100" for="email">email:</label>
+      <input type="email" id="email" name="email" required  class="p-1 border-2 text-black" style="border-radius: 5px" formControlName="email"/>
+      <p>{{formGroup.value.email}}</p>
+    </div>
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <label class="flex text-start w-100" for="password">password:</label>
+      <input type="password" id="password" name="password" required  class="p-1 border-2 text-black" style="border-radius: 5px" formControlName="password"/>
+      <p>{{formGroup.value.password}}</p>
+    </div>
+    <div class="flex flex-col items-center justify-start gap-2 p-2">
+      <button [disabled]="!formGroup.valid" type="submit" class="px-4 py-2 bg-blue-600 rounded w-100 text-light">
+        login
+      </button>
+    </div>
+  </form>
+</main>
